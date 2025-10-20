@@ -14,7 +14,7 @@ const config = {
 			colors: {
 				primary: '#B3BCA7',
 				secondary: '#F1C578',
-				text: '#000000',
+				text: '#51554B',
 			},
 			fontFamily: {
 				sans: ["var(--font-sans)"],

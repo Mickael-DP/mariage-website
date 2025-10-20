@@ -6,10 +6,14 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans, fontMarcellus, fontMarcellusSC, fontPlayfair } from "@/config/fonts";
+import {
+  fontSans,
+  fontMarcellus,
+  fontMarcellusSC,
+  fontPlayfair,
+} from "@/config/fonts";
 import Navbar from "@/components/layout/Header";
 import Header from "@/components/layout/Header";
-
 
 export const metadata: Metadata = {
   title: {
@@ -23,9 +27,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-  ],
+  themeColor: [{ media: "(prefers-color-scheme: light)", color: "white" }],
 };
 
 export default function RootLayout({
@@ -42,26 +44,15 @@ export default function RootLayout({
           fontSans.variable,
           fontMarcellus.variable,
           fontMarcellusSC.variable,
-          fontPlayfair.variable,
+          fontPlayfair.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
-     <Header />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+            <Header />
+            <main>
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
-                title="heroui.com homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">HeroUI</p>
-              </Link>
-            </footer>
           </div>
         </Providers>
       </body>

@@ -39,11 +39,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-primary py-4 sm:py-6">
-      <Container className="flex items-center justify-between flex-row-reverse sm:flex-row">
+    <header className="w-full sticky top-0 z-50 bg-primary py-3 sm:py-4 border-b border-black-200 px-16 ">
+      <div className="flex items-center justify-between flex-row-reverse sm:flex-row">
         <div className="flex items-center gap-2">
           <div className="hidden sm:block">
-            <p className="text-md font-bold">Amaury et Angélique</p>
+            <p className="text-md  font-playfair font-bold">Amaury et Angélique</p>
           </div>
         </div>
 
@@ -57,10 +57,10 @@ const Header = () => {
               href={`#${id}`}
               variant="light"
               aria-current={activeSection === id ? "page" : undefined}
-              className={`font-semibold transition ${
+              className={`font-semibold font-playfair transition ${
                 activeSection === id
                   ? "bg-black text-black"
-                  : "hover:text-black text-gray-700"
+                  : "hover:text-black text-black"
               }`}
             >
               {label}
@@ -70,7 +70,7 @@ const Header = () => {
             <Button
               as={Link}
               href="#contact"
-              className="bg-secondary text-black font-bold px-4 py-2 rounded-md transition"
+              className="bg-secondary text-black font-playfair font-bold px-4 py-2 rounded-md transition"
             >
               Liste de mariage
             </Button>
@@ -87,7 +87,7 @@ const Header = () => {
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </Container>
+      </div>
 
       {/* Mobile menu drawer + overlay */}
       <div
