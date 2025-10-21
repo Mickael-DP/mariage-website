@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@heroui/link";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
@@ -12,8 +11,8 @@ import {
   fontMarcellusSC,
   fontPlayfair,
 } from "@/config/fonts";
-import Navbar from "@/components/layout/Header";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -50,9 +49,8 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
             <Header />
-            <main>
-              {children}
-            </main>
+            <main>{children}</main> 
+            <Footer />
           </div>
         </Providers>
       </body>

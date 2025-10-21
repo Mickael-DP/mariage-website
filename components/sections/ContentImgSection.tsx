@@ -1,5 +1,5 @@
 import { Button } from "@heroui/button";
-import Container from "./Container";
+import Container from "../layout/Container";
 import Image from "next/image";
 import Link from "next/link";
 

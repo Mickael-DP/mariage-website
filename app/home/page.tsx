@@ -1,6 +1,10 @@
-import ContentBlocImgTxt from "@/components/layout/ContentBlocImgTxt";
-import ContentImgSection from "@/components/layout/ContentImgSection";
-import Hero from "@/components/layout/Hero";
+import Container from "@/components/layout/Container";
+import Hero from "@/components/sections/Hero";
+import ContentImgSection from "@/components/sections/ContentImgSection";
+import ContentBlocImgTxt from "@/components/sections/ContentBlocImgTxt";
+import QRcodeSection from "@/components/sections/QRcodeSection";
+import CardProgram from "@/components/UI/CardProgram";
+import { Card } from "@heroui/card";
 
 export default function HomePage() {
   return (
@@ -19,7 +23,9 @@ export default function HomePage() {
         ctaClassName="text-black"
       />
       <section className="bg-primary">
-        <h2 className="text-center text-5xl font-playfair py-12">Notre Histoire</h2>
+        <h2 className="text-center text-5xl font-playfair py-12">
+          Notre Histoire
+        </h2>
         <ContentBlocImgTxt
           title="Notre Histoire"
           description="Découvrez l'histoire de notre amour et les moments clés qui nous ont réunis."
@@ -35,6 +41,33 @@ export default function HomePage() {
           reverse={true}
         />
       </section>
+      <section className="bg-white ">
+        <h2 className="text-center text-5xl font-playfair mt-10 ">Le Programme</h2>
+        <Container className="flex flex-row justify-between  flex-wrap">
+          <CardProgram
+            title="Cérémonie Civile"
+            description="Mairie du 16ème"
+            imageSrc="https://placehold.co/360x240.png"
+            imageAlt="Cérémonie civile"
+            className="shadow-none border-1 border-text"
+          />
+          <CardProgram
+            title="Vin d'honneur"
+            description="Jardin du château"
+            imageSrc="https://placehold.co/360x240.png"
+            imageAlt="Vin d'honneur"
+            className="shadow-none border-1 border-text"
+          />
+          <CardProgram
+            title="Dîner & Soirée"
+            description="Salle de réception"
+            imageSrc="https://placehold.co/360x240.png"
+            imageAlt="Dîner et soirée"
+            className="shadow-none border-1 border-text"
+          />
+        </Container>
+      </section>
+      <QRcodeSection />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import Countdown from "../UI/Countdow";
-import Container from "./Container";
+import Container from "../layout/Container";
 import Image from "next/image";
 
 const Hero = () => {
