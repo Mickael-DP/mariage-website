@@ -13,7 +13,7 @@ const Hero = () => {
             Save the date
         </h2>
         <p className="font-marcellus text-md text-text md:text-xl mb-4">Nous nous marions le 16 Mai 2026</p>
-         <Countdown targetDate="2026-05-16T15:00:00" className="hidden md:block"/>
+         <Countdown targetDate="2026-05-16T15:00:00" className="hidden md:flex"/>
       </div>
           <div className="flex-1 flex items-center justify-center">
         <Image
@@ -25,7 +25,7 @@ const Hero = () => {
           className="rounded-lg "
         />
       </div>
-       <Countdown targetDate="2026-05-16T15:00:00" className="block md:hidden mt-10"/>
+       <Countdown targetDate="2026-05-16T15:00:00" className="flex md:hidden mt-10"/>
     </Container>
   );
 };
