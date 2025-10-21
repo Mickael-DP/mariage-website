@@ -69,7 +69,7 @@ const Countdown = ({ targetDate, className = "" }: CountdownProps) => {
   }
 
   return (
-    <div className="flex flex-row justify-center gap-6 mt-5">
+    <div className={`flex flex-row justify-center gap-6 mt-5 ${className}`}>
       <div className="flex flex-col items-center gap-1 ">
         <span className="font-marcellus text-4xl">
           {timeLeft.days.toString().padStart(2, "0")}

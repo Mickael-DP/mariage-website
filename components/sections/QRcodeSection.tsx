@@ -5,8 +5,8 @@ const QRcodeSection = () => {
   return (
     <section>
       <Container className="py-0">
-        <div className="flex w-[800px] h-[500px] bg-primary mx-auto rounded-lg justify-center">
-          <div className="flex flex-col gap-6 p-8">
+        <div className="flex md:w-[800px] md:h-[500px] bg-primary mx-auto rounded-lg justify-center">
+          <div className="flex flex-col gap-4 md:gap-6 p-4 md:p-8">
             <h2 className="text-4xl font-playfair text-center mb-6">
               Vos photos comptent !
             </h2>

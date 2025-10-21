@@ -39,10 +39,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-primary py-3 sm:py-4 border-b border-black-200 px-16 ">
+    <header className="w-full sticky top-0 z-50 bg-primary py-5 sm:py-4 border-b border-black-200 px-8 md:px-16 ">
       <div className="flex items-center justify-between flex-row-reverse sm:flex-row">
         <div className="flex items-center gap-2">
-          <div className="hidden sm:block">
+          <div className=" sm:block">
             <p className="text-md  font-playfair font-bold">Amaury et Angélique</p>
           </div>
         </div>
@@ -105,7 +105,7 @@ const Header = () => {
 
         {/* Drawer panel aligné à gauche */}
         <div
-          className={`absolute top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-lg p-6 flex flex-col justify-between transition-transform duration-300 ${
+          className={`absolute top-0 left-0 h-full w-3/4 max-w-xs bg-primary shadow-lg p-6 flex flex-col justify-between transition-transform duration-300 ${
             isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
           }`}
         >
@@ -114,9 +114,8 @@ const Header = () => {
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="text-sm font-bold leading-none">MICKAEL</p>
-                  <p className="text-xs font-bold  leading-none">
-                    DALLE PASQUALINE
+                  <p className="text-xs font-playfair font-bold  leading-none">
+                    Amaury et Angélique
                   </p>
                 </div>
               </div>
@@ -124,8 +123,6 @@ const Header = () => {
                 <X size={24} className="text-gray-800" />
               </button>
             </div>
-
-            <hr className="border-gray-200 my-4" />
 
             {/* Nav */}
             <nav className="flex flex-col gap-4">
@@ -146,14 +143,14 @@ const Header = () => {
             </nav>
           </div>
 
-          {/* Bottom - CTA + réseaux */}
+
           <div className="mt-6 flex flex-col gap-6">
             <Button
-              endContent={<Inbox size={24} />}
+            
               as={Link}
               href="#contact"
               onPress={() => setIsOpen(false)}
-              className="text-black bg-primary text-center py-2 rounded-md font-semibold flex items-center"
+              className="text-black bg-secondary text-center py-2 rounded-md font-semibold flex items-center"
             >
               Liste de mariage
             </Button>

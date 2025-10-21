@@ -2,14 +2,13 @@ import Container from "./Container";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary pt-8">
-
-        <div className="flex flex-col md:flex-row md:justify-around mb-6">
-          <div className="flex flex-col gap-2">
+    <footer className="bg-primary pt-8 text-center ">
+        <div className="flex flex-col md:flex-row md:justify-around gap-4 md:mb-6">
+          <div className="flex flex-col md:gap-2 md:text-start">
             <h2 className="font-playfair font-bold">Amaury et Angélique</h2>
             <p className="font-marcellus text-text">Notre site de mariage, save the date</p>
           </div>
-          <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10">
             <div>
               <h3 className="font-playfair font-bold mb-2">Plan du site</h3>
               <ul>

@@ -39,9 +39,10 @@ const ContentImgSection = ({
   ctaVariant = "solid",
 }: ContentImgSectionProps) => {
 
-  const textColumn = (
-    <div className={`flex-1 flex flex-col justify-center text-${textAlign} p-8`}>
-          {subtitle && (
+
+  const textContentDesktop = (
+    <div className={`flex-1 flex flex-col justify-center text-${textAlign} md:p-8`}>
+      {subtitle && (
         <p className="font-marcellus text-2xl md:text-3xl mb-6">
           {subtitle}
         </p>
@@ -49,14 +50,14 @@ const ContentImgSection = ({
       <h2 className="font-marcellus text-4xl md:text-5xl mb-4">
         {title}
       </h2>
-    
+      
       <p className="font-marcellus text-sm text-text md:text-xl mb-4">
         {description}
       </p>
       {children && children}
       
       {ctaText && (
-        <div className="mt-6">
+        <div className="md:mt-6">
           {ctaHref ? (
             <Button 
               as={Link} 
@@ -82,8 +83,27 @@ const ContentImgSection = ({
     </div>
   );
 
-  const imageColumn = (
-    <div className="flex-1 flex items-center justify-center p-4">
+  const textContentMobile = (
+    <div className="text-center  md:hidden">
+      {subtitle && (
+        <p className="font-marcellus text-xl mb-4">
+          {subtitle}
+        </p>
+      )}
+      <h2 className="font-marcellus text-3xl mb-4">
+        {title}
+      </h2>
+      
+      <p className="font-marcellus text-sm text-text ">
+        {description}
+      </p>
+      {children && children}
+    </div>
+  );
+
+  
+  const imageColumnDesktop = (
+    <div className="hidden md:flex flex-1 items-center justify-center p-4">
       <div className="relative w-full h-[400px] md:h-[500px]">
         <Image
           src={imageSrc}
@@ -95,19 +115,69 @@ const ContentImgSection = ({
     </div>
   );
 
-  return (
-    <Container className={`w-full flex flex-col md:flex-row ${backgroundColor}`}>
-      {reverse ? (
-        <>
-          {imageColumn}
-          {textColumn}
-        </>
+
+  const imageColumnMobile = (
+    <div className="md:hidden flex items-center justify-center ">
+      <div className="relative w-full h-[300px]">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="rounded-lg object-cover object-center"
+        />
+      </div>
+    </div>
+  );
+
+
+  const buttonMobile = ctaText && (
+    <div className="md:hidden flex justify-center ">
+      {ctaHref ? (
+        <Button 
+          as={Link} 
+          href={ctaHref}
+          color={ctaColor}
+          variant={ctaVariant}
+          className={`font-marcellus-sc ${ctaClassName}`}
+        >
+          {ctaText}
+        </Button>
       ) : (
-        <>
-          {textColumn}
-          {imageColumn}
-        </>
+        <Button
+          onPress={ctaOnClick}
+          color={ctaColor}
+          variant={ctaVariant}
+          className={`font-marcellus-sc ${ctaClassName}`}
+        >
+          {ctaText}
+        </Button>
       )}
+    </div>
+  );
+
+  return (
+    <Container className={`w-full ${backgroundColor}`}>
+
+      <div className="md:hidden flex flex-col gap-4">
+        {textContentMobile}
+        {imageColumnMobile}
+        {buttonMobile}
+      </div>
+
+
+      <div className="hidden md:flex md:flex-row">
+        {reverse ? (
+          <>
+            {imageColumnDesktop}
+            {textContentDesktop}
+          </>
+        ) : (
+          <>
+            {textContentDesktop}
+            {imageColumnDesktop}
+          </>
+        )}
+      </div>
     </Container>
   );
 };
