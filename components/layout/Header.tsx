@@ -35,7 +35,7 @@ const Header = () => {
 
   const navItems = [
     { id: "programme", label: "Programme" },
-    { id: "info", label: "Info Pratique" },
+    { id: "info-pratique", label: "Info Pratique" },
   ];
 
   return (
@@ -54,7 +54,7 @@ const Header = () => {
               key={id}
               size="lg"
               as={Link}
-              href={`#${id}`}
+              href={`/${id}`}
               variant="light"
               aria-current={activeSection === id ? "page" : undefined}
               className={`font-semibold font-playfair transition ${
@@ -69,7 +69,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Button
               as={Link}
-              href="#contact"
+              href="/liste-mariage"
               className="bg-secondary text-black font-playfair font-bold px-4 py-2 rounded-md transition"
             >
               Liste de mariage
@@ -148,7 +148,7 @@ const Header = () => {
             <Button
             
               as={Link}
-              href="#contact"
+              href="/liste-mariage"
               onPress={() => setIsOpen(false)}
               className="text-black bg-secondary text-center py-2 rounded-md font-semibold flex items-center"
             >

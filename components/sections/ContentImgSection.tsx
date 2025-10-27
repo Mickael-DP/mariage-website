@@ -47,7 +47,7 @@ const ContentImgSection = ({
           {subtitle}
         </p>
       )}
-      <h2 className="font-marcellus text-4xl md:text-5xl mb-4">
+      <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">
         {title}
       </h2>
       
@@ -65,6 +65,8 @@ const ContentImgSection = ({
               color={ctaColor}
               variant={ctaVariant}
               className={`font-marcellus-sc ${ctaClassName}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {ctaText}
             </Button>
