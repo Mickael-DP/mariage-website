@@ -39,11 +39,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-primary py-5 sm:py-4 border-b border-black-200 px-8 md:px-16 ">
+    <header className="w-full sticky top-0 z-50 bg-primary py-5 sm:py-4 border-b border-black-200 px-8 md:px-42 ">
       <div className="flex items-center justify-between flex-row-reverse sm:flex-row">
         <div className="flex items-center gap-2">
           <div className=" sm:block">
-            <p className="text-md  font-playfair font-bold">Amaury et Angélique</p>
+            <p className="text-md font-playfair font-bold"><a href="/">Amaury et Angélique</a></p>
           </div>
         </div>
 
@@ -115,7 +115,7 @@ const Header = () => {
               <div className="flex items-center gap-2">
                 <div>
                   <p className="text-xs font-playfair font-bold  leading-none">
-                    Amaury et Angélique
+                    <a href="/">Amaury et Angélique</a>
                   </p>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const Header = () => {
               {navItems.map(({ id, label }) => (
                 <Link
                   key={id}
-                  href={`#${id}`}
+                  href={`/${id}`}
                   onClick={() => setIsOpen(false)}
                   className={`text-base font-semibold ${
                     activeSection === id

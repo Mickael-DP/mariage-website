@@ -6,25 +6,35 @@ import Link from "next/link";
 interface ContentImgSectionProps {
   title: string;
   subtitle?: string;
-  description: string;
+  description?: string;
+  descriptionHtml?: string;
   imageSrc: string;
   imageAlt: string;
   reverse?: boolean;
   backgroundColor?: string;
   textAlign?: "left" | "center" | "right";
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   ctaText?: string;
   ctaHref?: string;
   ctaOnClick?: () => void;
   ctaClassName?: string;
   ctaColor?: "primary" | "secondary" | "success" | "warning" | "danger";
-  ctaVariant?: "solid" | "bordered" | "light" | "flat" | "faded" | "shadow" | "ghost";
+  ctaVariant?:
+    | "solid"
+    | "bordered"
+    | "light"
+    | "flat"
+    | "faded"
+    | "shadow"
+    | "ghost";
+  ctaSize?: "sm" | "md" | "lg";
 }
 
 const ContentImgSection = ({
   title,
   subtitle,
   description,
+  descriptionHtml,
   imageSrc,
   imageAlt,
   reverse = false,
@@ -37,33 +47,40 @@ const ContentImgSection = ({
   ctaClassName = "",
   ctaColor = "primary",
   ctaVariant = "solid",
+  ctaSize = "md",
 }: ContentImgSectionProps) => {
-
-
   const textContentDesktop = (
-    <div className={`flex-1 flex flex-col justify-center text-${textAlign} md:p-8`}>
+    <div className={`flex-1 flex flex-col justify-center text-${textAlign}`}>
       {subtitle && (
-        <p className="font-marcellus text-2xl md:text-3xl mb-6">
-          {subtitle}
-        </p>
+        <p className="font-marcellus text-2xl md:text-3xl mb-6">{subtitle}</p>
       )}
-      <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">
-        {title}
-      </h2>
-      
+      <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">{title}</h2>
+
       <p className="font-marcellus text-sm text-text md:text-xl mb-4">
         {description}
       </p>
+      {descriptionHtml ? (
+        <div
+          className="font-marcellus text-sm text-text md:text-xl mb-4"
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+        />
+      ) : description ? (
+        <p className="font-marcellus text-sm text-text md:text-xl mb-4">
+          {" "}
+          {description}
+        </p>
+      ) : null}
       {children && children}
-      
+
       {ctaText && (
         <div className="md:mt-6">
           {ctaHref ? (
-            <Button 
-              as={Link} 
+            <Button
+              as={Link}
               href={ctaHref}
               color={ctaColor}
               variant={ctaVariant}
+              size={ctaSize}
               className={`font-marcellus-sc ${ctaClassName}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -75,6 +92,7 @@ const ContentImgSection = ({
               onPress={ctaOnClick}
               color={ctaColor}
               variant={ctaVariant}
+              size={ctaSize}
               className={`font-marcellus-sc ${ctaClassName}`}
             >
               {ctaText}
@@ -86,26 +104,26 @@ const ContentImgSection = ({
   );
 
   const textContentMobile = (
-    <div className="text-center  md:hidden">
-      {subtitle && (
-        <p className="font-marcellus text-xl mb-4">
-          {subtitle}
+    <div className="text-center md:hidden">
+      {subtitle && <p className="font-marcellus text-xl mb-4">{subtitle}</p>}
+      <h2 className="font-marcellus text-3xl mb-4">{title}</h2>
+     {descriptionHtml ? (
+        <div
+          className="font-marcellus  text-text mb-4"
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+        />
+      ) : description ? (
+        <p className="font-marcellus text-sm text-text md:text-xl mb-4">
+          {" "}
+          {description}
         </p>
-      )}
-      <h2 className="font-marcellus text-3xl mb-4">
-        {title}
-      </h2>
-      
-      <p className="font-marcellus text-sm text-text ">
-        {description}
-      </p>
+      ) : null}
       {children && children}
     </div>
   );
 
-  
   const imageColumnDesktop = (
-    <div className="hidden md:flex flex-1 items-center justify-center p-4">
+    <div className="hidden md:flex flex-1 items-center justify-center">
       <div className="relative w-full h-[400px] md:h-[500px]">
         <Image
           src={imageSrc}
@@ -116,7 +134,6 @@ const ContentImgSection = ({
       </div>
     </div>
   );
-
 
   const imageColumnMobile = (
     <div className="md:hidden flex items-center justify-center ">
@@ -131,12 +148,11 @@ const ContentImgSection = ({
     </div>
   );
 
-
   const buttonMobile = ctaText && (
     <div className="md:hidden flex justify-center ">
       {ctaHref ? (
-        <Button 
-          as={Link} 
+        <Button
+          as={Link}
           href={ctaHref}
           color={ctaColor}
           variant={ctaVariant}
@@ -159,15 +175,13 @@ const ContentImgSection = ({
 
   return (
     <Container className={`w-full ${backgroundColor}`}>
-
       <div className="md:hidden flex flex-col gap-4">
         {textContentMobile}
         {imageColumnMobile}
         {buttonMobile}
       </div>
 
-
-      <div className="hidden md:flex md:flex-row">
+      <div className="hidden md:flex md:flex-row gap-12">
         {reverse ? (
           <>
             {imageColumnDesktop}

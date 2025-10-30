@@ -6,39 +6,60 @@ import QRcodeSection from "@/components/sections/QRcodeSection";
 export default function ListeMariagePage() {
   const galleryImages = [
     {
-      src: "https://placehold.co/250x300.png",
+      src: "/assets/gallery/polynesie.jpg",
       alt: "Placeholder 1",
     },
     {
-     src: "https://placehold.co/250x260.png",
+      src: "/assets/gallery/polynesie-5.jpg",
       alt: "Placeholder 2",
     },
     {
-     src: "https://placehold.co/250x180.png",
+      src: "/assets/gallery/polynesie-2.jpg",
       alt: "Placeholder 3",
     },
     {
-  src: "https://placehold.co/250x220.png",
+      src: "/assets/gallery/polynesie-1.jpg",
       alt: "Placeholder 4",
     },
     {
-    src: "https://placehold.co/250x180.png",
+      src: "/assets/gallery/polynesie-3.jpg",
       alt: "Placeholder 5",
     },
     {
-src: "https://placehold.co/250x220.png",
+      src: "/assets/gallery/polynesie-7.jpg",
       alt: "Placeholder 6",
     },
     {
-src: "https://placehold.co/250x300.png",
+      src: "/assets/gallery/polynesie-6.jpg",
       alt: "Placeholder 7",
     },
   ];
+
+  const description = {
+    __html: `
+      <p class="text-md md:text-lg  mb-4">
+        Pour notre mariage, nous avons choisi de troquer les cadeaux matériels contre une aventure unique : 
+        <strong>un voyage de noces en Polynésie</strong>.
+      </p>
+      <p class="text-md md:text-lg mb-4">
+        Chaque participation nous aidera à réaliser ce rêve lointain, que ce soit pour explorer les lagons cristallins,
+        découvrir la culture locale ou simplement profiter de moments inoubliables ensemble.
+      </p>
+
+       <p class="text-md md:text-lg  mb-4">
+        Pour ceux qui souhaitent contribuer, nous avons créé une cagnotte en ligne, elle sera cloturée le <strong> 1 avril 2026 </strong> !
+      </p>
+      <p class="text-md md:text-lg italic text-center">
+        Votre cadeau = notre bonheur, et promis… on lèvera notre verre à votre santé à l'autre bout du monde ! 🥂
+      </p>
+    
+    `,
+  };
   return (
-     <div className="flex flex-col ">
+    <div className="flex flex-col ">
       <section className="bg-primary">
         <Container className="mx-auto">
-          <h1 className="text-center text-5xl font-playfair">
+          <h1 className="text-center text-4xl md:text-5xl font-playfair">
             Liste de Mariage
           </h1>
           <div className="max-w-6xl mx-auto pt-10">
@@ -46,16 +67,17 @@ src: "https://placehold.co/250x300.png",
           </div>
         </Container>
       </section>
-        <ContentImgSection
+      <ContentImgSection
         title="Notre voyage de noces"
-        description="Pour notre mariage, nous avons choisi de troquer les cadeaux matériels contre une aventure unique : un voyage de noces en Polynésie. Chaque participation nous aidera à siroter des mojitos, à dormir dans un pilotis et à collectionner des souvenirs magiques que nous garderons toute notre vie. Votre cadeau = notre bonheur, et promis… on lèvera notre verre à votre santé à l’autre bout du monde !"
-        imageSrc="/amau&angelique2.JPG"
+        descriptionHtml={description.__html}
+        imageSrc="/assets/gallery/tahiti.jpeg"
         imageAlt="Notre Histoire"
         reverse={false}
-        ctaText="Lien vers notre cagnotte"
+        ctaText=" Notre cagnotte"
         ctaHref="https://www.my-liste.fr/client/liste/show/49/nouvelle-liste-de-voyage-pour-angelique-sejalon"
         ctaColor="primary"
         ctaClassName="text-black"
+        ctaSize="lg"
       />
       <QRcodeSection />
     </div>

@@ -4,7 +4,7 @@ const GalleryImg = ({ src, alt }: { src: string; alt: string }) => {
       <img
         src={src}
         alt={alt}
-        className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
+        className="w-full md:max-h-[411px] object-cover transform hover:scale-105 transition-transform duration-300"
       />
     </div>
   );

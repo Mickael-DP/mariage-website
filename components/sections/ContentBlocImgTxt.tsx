@@ -25,7 +25,7 @@ const ContentBlocImgTxt = ({
 }: ContentBlocImgTxtProps) => {
 
   const textColumn = (
-    <div className={`bg-white w-[704px] h-[450px]  flex rounded-lg p-6 `}>
+    <div className={`bg-white w-[704px] h-[450px]  flex rounded-lg p-20 items-center`}>
       <div className={`w-full h-full content-center`}>
         {subtitle && (
           <p className="font-marcellus text-lg md:text-xl mb-4 text-gray-600">
@@ -65,7 +65,7 @@ const ContentBlocImgTxt = ({
   );
 
   return (
-      <div className=" bg-primary py-6 flex flex-row justify-around ">
+      <div className=" bg-primary py-6 px-22 flex flex-row justify-around ">
         {reverse ? (
           <>
             {imageColumn}

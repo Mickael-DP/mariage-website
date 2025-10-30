@@ -34,7 +34,7 @@ const CardProgram = ({
           <Button
             variant="light"
             as={Link}
-            href="/home"
+            href="/info-pratique"
             size="sm"
             className=" p-0 underline uppercase font-marcellus"
           >

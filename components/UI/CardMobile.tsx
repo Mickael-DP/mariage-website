@@ -23,12 +23,12 @@ const CardMobile = ({
       className={`flex flex-col p-4 rounded-lg overflow-hidden ${className}`}
     >
       <div className="flex flex-col gap-4">
-        <small className="text-center text-sm uppercase text-gray-500">
+          <p className="font-marcellus text-sm text-gray-600 text-center">
           {subtitle}
-        </small>
-        <h2 className="text-4xl font-playfair text-center mb-6">{title}</h2>
-        <p className="text-center">{description}</p>
-        <div className="flex justify-center mt-4">
+        </p>
+        <h2 className={`font-marcellus text-3xl md:text-4xl text-center`}>{title}</h2>
+        <p className="font-marcellus text-center">{description}</p>
+        <div className="flex justify-center ">
           <div className="relative w-64 h-52">
             <Image
               src={imageSrc}
