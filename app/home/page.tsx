@@ -13,7 +13,7 @@ export default function HomePage() {
       <ContentImgSection
         title="Bienvenue sur notre site de mariage"
         description="Nous sommes ravis de partager avec vous les détails de notre journée spéciale. Explorez le site pour en savoir plus sur notre histoire, le programme de la journée, et bien plus encore."
-        imageSrc="/amau&angelique2.JPG"
+        imageSrc="/assets/images/amau&angelique2.JPG"
         subtitle=""
         imageAlt="Jour de notre rencontre"
         reverse={true}

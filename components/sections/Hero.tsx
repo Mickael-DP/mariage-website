@@ -17,7 +17,7 @@ const Hero = () => {
       </div>
           <div className="flex-1 flex items-center justify-center">
         <Image
-          src="/amau&angelique.jpg"
+          src="/assets/images/amau&angelique.jpg"
           alt="Amaury et Angélique"
           layout="responsive"
           width={540}
