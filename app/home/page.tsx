@@ -24,13 +24,14 @@ export default function HomePage() {
         ctaSize="lg"
       />
       <section className="bg-primary">
-        <h2 className="text-center text-4xl md:text-5xl font-playfair py-8 md:py-12">
+        <Container>
+        <h2 className="text-center text-4xl md:text-5xl font-playfair mb-6">
           Notre Histoire
         </h2>
 
-        <div className="md:hidden px-6 flex flex-col gap-6 mb-12">
+        <div className="md:hidden flex flex-col gap-6 mb-12">
           <CardMobile
-            subtitle="21 Janvier 2021"
+            subtitle="1 Février 2021"
             title="Jour de notre rencontre"
             description="On s’est trouvés en plein Covid, un match improbable devenu une belle évidence, entre couvre-feu et stratagèmes amoureux"
             imageSrc="/assets/images/photo-rencontre.jpg"
@@ -49,7 +50,7 @@ export default function HomePage() {
 
         <div className="hidden md:block">
           <ContentBlocImgTxt
-            subtitle="21 Janvier 2021"
+            subtitle="1 Février 2021"
             title="Jour de notre rencontre"
             description="On s’est trouvés en plein Covid, un match improbable devenu une belle évidence, entre couvre-feu et stratagèmes amoureux"
             imageSrc="/assets/images/photo-rencontre.jpg"
@@ -65,9 +66,10 @@ export default function HomePage() {
             reverse={true}
           />
         </div>
+        </Container>
       </section>
       <section className="bg-white ">
-            <h2 className="text-center text-4xl md:text-5xl font-playfair pt-8 md:py-12">
+            <h2 className="text-center text-4xl md:text-5xl font-playfair pt-12">
           Le Programme
         </h2>
         <Container className="flex gap-4 md:gap-6 md:flex-row justify-between flex-wrap">
@@ -91,6 +93,7 @@ export default function HomePage() {
              imageSrc="/assets/images/photo-fete.jpeg"
             imageAlt="Dîner et soirée"
             className="shadow-none border-1 border-text"
+            
           />
         </Container>
       </section>

@@ -8,8 +8,8 @@ interface ContentImgSectionProps {
   subtitle?: string;
   description?: string;
   descriptionHtml?: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   reverse?: boolean;
   backgroundColor?: string;
   textAlign?: "left" | "center" | "right";
@@ -28,6 +28,8 @@ interface ContentImgSectionProps {
     | "shadow"
     | "ghost";
   ctaSize?: "sm" | "md" | "lg";
+  mapSrc?: string;
+  showMap?: boolean;
 }
 
 const ContentImgSection = ({
@@ -48,6 +50,8 @@ const ContentImgSection = ({
   ctaColor = "primary",
   ctaVariant = "solid",
   ctaSize = "md",
+  mapSrc,
+  showMap = false,
 }: ContentImgSectionProps) => {
   const textContentDesktop = (
     <div className={`flex-1 flex flex-col justify-center text-${textAlign}`}>
@@ -55,10 +59,6 @@ const ContentImgSection = ({
         <p className="font-marcellus text-2xl md:text-3xl mb-6">{subtitle}</p>
       )}
       <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">{title}</h2>
-
-      <p className="font-marcellus text-sm text-text md:text-xl mb-4">
-        {description}
-      </p>
       {descriptionHtml ? (
         <div
           className="font-marcellus text-sm text-text md:text-xl mb-4"
@@ -123,24 +123,38 @@ const ContentImgSection = ({
   );
 
   const imageColumnDesktop = (
-    <div className="hidden md:flex flex-1 items-center justify-center">
-      <div className="relative w-full h-[400px] md:h-[500px]">
+   <div className="hidden md:flex flex-1 items-center justify-center">
+    <div className="relative w-full h-[400px] md:h-[500px]">
+      {showMap && mapSrc ? (
+        <iframe
+          src={mapSrc}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="rounded-lg"
+          title="Google Maps"
+        />
+      ) : (
         <Image
-          src={imageSrc}
-          alt={imageAlt}
+          src={imageSrc || ""}
+          alt={imageAlt || ""}
           fill
           className="rounded-lg object-cover object-center"
         />
-      </div>
+      )}
     </div>
+  </div>
   );
 
   const imageColumnMobile = (
     <div className="md:hidden flex items-center justify-center ">
       <div className="relative w-full h-[300px]">
         <Image
-          src={imageSrc}
-          alt={imageAlt}
+          src={imageSrc || ""}
+          alt={imageAlt   || ""}
           fill
           className="rounded-lg object-cover object-center"
         />

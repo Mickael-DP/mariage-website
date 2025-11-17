@@ -5,7 +5,7 @@ const Container = (props: ContainerProps) => {
 	return (
 		<div
 			{...props}
-			className={`mx-auto px-8 py-8 md:px-42 md:py-16 ${
+			className={`px-8 py-8 md:px-24 md:py-16  ${
 				props.className || ''
 			}`}>
 			{props.children}

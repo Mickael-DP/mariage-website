@@ -39,7 +39,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-primary py-5 sm:py-4 border-b border-black-200 px-8 md:px-42 ">
+    <header className="w-full sticky top-0 z-50 bg-primary py-5 sm:py-4 border-b border-black-200 px-8 md:px-24 ">
       <div className="flex items-center justify-between flex-row-reverse sm:flex-row">
         <div className="flex items-center gap-2">
           <div className=" sm:block">

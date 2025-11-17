@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <Container className="w-full flex flex-col md:flex-row bg-primary">
+    <Container className="w-full flex flex-col md:flex-row bg-primary gap-6">
       <div className="flex-1 flex flex-col justify-center text-center">
         <h1 className="font-marcellus text-5xl md:text-6xl mb-4">
           Amaury & Angélique
