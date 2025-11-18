@@ -33,7 +33,7 @@ const QRcodeSection = () => {
                 Téléchargez l'application mobile <strong>WedShoots</strong> pour
                 accéder au QR code et partager vos photos facilement :
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+              <div className="flex flex-row gap-4 justify-center mt-6">
                 <a
                   href="https://apps.apple.com/fr/app/wedshoots/id660256196"
                   target="_blank"
