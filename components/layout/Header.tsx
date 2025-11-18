@@ -43,7 +43,7 @@ const Header = () => {
       <div className="flex items-center justify-between flex-row-reverse sm:flex-row">
         <div className="flex items-center gap-2">
           <div className=" sm:block">
-            <p className="text-md font-playfair font-bold"><a href="/">Amaury et Angélique</a></p>
+            <p className="text-md font-playfair font-bold"><a href="/">Angélique & Amaury</a></p>
           </div>
         </div>
 
@@ -111,11 +111,11 @@ const Header = () => {
         >
           {/* Header mini */}
           <div>
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-4 ">
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="text-xs font-playfair font-bold  leading-none">
-                    <a href="/">Amaury et Angélique</a>
+                  <p className="text-sm font-playfair font-bold leading-none">
+                    <a href="/">Angélique & Amaury</a>
                   </p>
                 </div>
               </div>
@@ -124,8 +124,10 @@ const Header = () => {
               </button>
             </div>
 
+          <div className="w-full border-t border-black mb-3"></div>
+
             {/* Nav */}
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-4   ">
               {navItems.map(({ id, label }) => (
                 <Link
                   key={id}

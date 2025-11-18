@@ -5,6 +5,8 @@ import ContentBlocImgTxt from "@/components/sections/ContentBlocImgTxt";
 import QRcodeSection from "@/components/sections/QRcodeSection";
 import CardProgram from "@/components/UI/CardProgram";
 import CardMobile from "@/components/UI/CardMobile";
+import { Button } from "@heroui/button";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -75,27 +77,39 @@ export default function HomePage() {
         <Container className="flex gap-4 md:gap-6 md:flex-row justify-between flex-wrap">
           <CardProgram
             title="Cérémonie à l'église"
-            description="Église notre dame de l'Assomption"
+            description="Église de Thizy les Bourgs"
             imageSrc="/assets/images/photo-eglise.jpg"
             imageAlt="Cérémonie civile"
             className="shadow-none border-1 border-text"
           />
           <CardProgram
             title="Vin d'honneur"
-            description="Jardin du château"
+            description="Jardin du Domaine de Laforest"
             imageSrc="/assets/images/photo-domaine.jpg"
             imageAlt="Vin d'honneur"
             className="shadow-none border-1 border-text"
           />
           <CardProgram
             title="Dîner & Soirée"
-            description="Salle de réception"
+            description="Salle de réception du Château de Laforest"
              imageSrc="/assets/images/photo-fete.jpeg"
             imageAlt="Dîner et soirée"
             className="shadow-none border-1 border-text"
-            
+
           />
         </Container>
+        <div className="text-center ">
+ <Button
+         as={Link}
+          href="/programme"
+          color="primary"
+          variant="solid"
+          className='font-marcellus-sc text-black '
+        >
+          Voir le programme complet
+        </Button>
+        </div>
+        
       </section>
       <QRcodeSection />
     </div>
