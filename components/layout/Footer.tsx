@@ -29,16 +29,16 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="font-playfair  font-bold mb-2">Contact</h3>
-            <ul>
+          <div >
+            <h3 className="font-playfair text-center  font-bold mb-2">Contact</h3>
+            <ul className="flex flex-col items-center md:items-start">
               <li className="font-marcellus flex gap-3 items-center text-text">
                 <MailIcon size={18} />sejalon.angelique@gmail.com 
                 <a href="mailto:sejalon.angelique@gmail.com 
  " className="underline" />
               </li>
               <li className="font-marcellus flex gap-3 items-center text-text">
-                 <PhoneIcon size={18}/>33 6 84 75 54 57
+                 <PhoneIcon size={18}/>+33 6 84 75 54 57
                 <a href="tel:+33684755457" className="underline" />
               </li>
             </ul>

@@ -21,7 +21,7 @@ const QRcodeSection = () => {
             <div className="flex justify-center mt-4">
               <div className="relative w-[200px] h-[200px] p-4">
                 <Image
-                  src="https://placehold.co/200.png"
+                  src="/assets/QRcode-album.png"
                   alt="QR Code pour partager les photos du mariage"
                   className="w-full h-full object-cover object-center border-6 border-white rounded-xl"
                   fill
