@@ -13,6 +13,7 @@ import {
 } from "@/config/fonts";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,7 @@ export default function RootLayout({
             <main>{children}</main> 
             <Footer />
           </div>
+          <Analytics />
         </Providers>
       </body>
     </html>
