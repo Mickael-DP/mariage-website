@@ -21,7 +21,7 @@ const CardProgram = ({
   className = "",
 }: CardProgramProps) => {
   return (
-    <Card className={` w-[362px] h-[440px] ${className}`}>
+    <Card className={`w-[362px] h-[440px] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${className}`}>
       <CardHeader className="p-0  h-[264px] flex-col items-start">
         <div className="relative w-full h-full">
           <Image alt={imageAlt} className="object-cover" src={imageSrc} fill />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Inbox } from "lucide-react";
 
@@ -9,12 +10,25 @@ import Container from "./Container";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("accueil");
+  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
+    // If not on home page, rely on pathname
+    if (pathname !== "/" && pathname !== "/home") {
+      const currentParam = pathname.substring(1); // remove leading slash
+      setActiveSection(currentParam);
+      return;
+    }
+
     const handleScroll = () => {
-      const sections = ["programme", "info"];
+      const sections = ["programme", "info-pratique"]; // Updated to match nav items
       const scrollY = window.scrollY;
+
+      if (scrollY < 100) {
+        setActiveSection("home");
+        return;
+      }
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -26,15 +40,16 @@ const Header = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // initial check
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
   const navItems = [
+    { id: "home", label: "Accueil" },
     { id: "programme", label: "Programme" },
     { id: "info-pratique", label: "Info Pratique" },
   ];
@@ -58,7 +73,7 @@ const Header = () => {
               variant="light"
               aria-current={activeSection === id ? "page" : undefined}
               className={`font-semibold font-playfair transition ${activeSection === id
-                ? "bg-black text-black"
+                ? "bg-black text-white"
                 : "hover:text-black text-black"
                 }`}
             >

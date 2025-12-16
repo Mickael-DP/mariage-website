@@ -69,7 +69,7 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-      <section className="bg-white ">
+      <section id="programme" className="bg-white ">
         <h2 className="text-center text-4xl md:text-5xl font-playfair pt-12">
           Le Programme
         </h2>

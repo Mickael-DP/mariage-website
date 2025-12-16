@@ -3,6 +3,7 @@ import { LinkButton } from "@/components/UI/LinkButton";
 import Container from "../layout/Container";
 import Image from "next/image";
 import Link from "next/link";
+import MotionWrapper from "../UI/MotionWrapper";
 
 interface ContentImgSectionProps {
   title: string;
@@ -56,50 +57,52 @@ const ContentImgSection = ({
 }: ContentImgSectionProps) => {
   const textContentDesktop = (
     <div className={`flex-1 flex flex-col justify-center text-${textAlign}`}>
-      {subtitle && (
-        <p className="font-marcellus text-2xl md:text-3xl mb-6">{subtitle}</p>
-      )}
-      <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">{title}</h2>
-      {descriptionHtml ? (
-        <div
-          className="font-marcellus text-sm text-text md:text-xl mb-4"
-          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-        />
-      ) : description ? (
-        <p className="font-marcellus text-sm text-text md:text-xl mb-4">
-          {" "}
-          {description}
-        </p>
-      ) : null}
-      {children && children}
+      <MotionWrapper direction="up" delay={0.1}>
+        {subtitle && (
+          <p className="font-marcellus text-2xl md:text-3xl mb-6">{subtitle}</p>
+        )}
+        <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">{title}</h2>
+        {descriptionHtml ? (
+          <div
+            className="font-marcellus text-sm text-text md:text-xl mb-4"
+            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          />
+        ) : description ? (
+          <p className="font-marcellus text-sm text-text md:text-xl mb-4">
+            {" "}
+            {description}
+          </p>
+        ) : null}
+        {children && children}
 
-      {ctaText && (
-        <div className="md:mt-6">
-          {ctaHref ? (
-            <LinkButton
-              href={ctaHref}
-              color={ctaColor}
-              variant={ctaVariant}
-              size={ctaSize}
-              className={`font-marcellus-sc ${ctaClassName}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {ctaText}
-            </LinkButton>
-          ) : (
-            <Button
-              onPress={ctaOnClick}
-              color={ctaColor}
-              variant={ctaVariant}
-              size={ctaSize}
-              className={`font-marcellus-sc ${ctaClassName}`}
-            >
-              {ctaText}
-            </Button>
-          )}
-        </div>
-      )}
+        {ctaText && (
+          <div className="md:mt-6">
+            {ctaHref ? (
+              <LinkButton
+                href={ctaHref}
+                color={ctaColor}
+                variant={ctaVariant}
+                size={ctaSize}
+                className={`font-marcellus-sc ${ctaClassName}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {ctaText}
+              </LinkButton>
+            ) : (
+              <Button
+                onPress={ctaOnClick}
+                color={ctaColor}
+                variant={ctaVariant}
+                size={ctaSize}
+                className={`font-marcellus-sc ${ctaClassName}`}
+              >
+                {ctaText}
+              </Button>
+            )}
+          </div>
+        )}
+      </MotionWrapper>
     </div>
   );
 
@@ -124,28 +127,30 @@ const ContentImgSection = ({
 
   const imageColumnDesktop = (
     <div className="hidden md:flex flex-1 items-center justify-center">
-      <div className="relative w-full h-[400px] md:h-[500px]">
-        {showMap && mapSrc ? (
-          <iframe
-            src={mapSrc}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="rounded-lg"
-            title="Google Maps"
-          />
-        ) : (
-          <Image
-            src={imageSrc || ""}
-            alt={imageAlt || ""}
-            fill
-            className="rounded-lg object-cover object-center"
-          />
-        )}
-      </div>
+      <MotionWrapper direction="up" delay={0.3} className="w-full h-full flex items-center justify-center">
+        <div className="relative w-full h-[400px] md:h-[500px]">
+          {showMap && mapSrc ? (
+            <iframe
+              src={mapSrc}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+              title="Google Maps"
+            />
+          ) : (
+            <Image
+              src={imageSrc || ""}
+              alt={imageAlt || ""}
+              fill
+              className="rounded-lg object-cover object-center"
+            />
+          )}
+        </div>
+      </MotionWrapper>
     </div>
   );
 

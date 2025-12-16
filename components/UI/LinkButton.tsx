@@ -10,7 +10,8 @@ interface LinkButtonProps extends ButtonProps {
 
 export const LinkButton = forwardRef<HTMLButtonElement, LinkButtonProps>(
     (props, ref) => {
-        return <Button as={Link} ref={ref} {...props} />;
+        const defaultClasses = "hover:scale-105 active:scale-95 transition-transform duration-200";
+        return <Button as={Link} ref={ref} {...props} className={`${defaultClasses} ${props.className || ""}`} />;
     }
 );
 
