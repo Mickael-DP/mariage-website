@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X, Inbox } from "lucide-react";
-import { Button } from "@heroui/button";
+
+import { LinkButton } from "@/components/UI/LinkButton";
 import Container from "./Container";
 
 const Header = () => {
@@ -50,30 +51,27 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden sm:flex items-center gap-4">
           {navItems.map(({ id, label }) => (
-            <Button
+            <LinkButton
               key={id}
               size="lg"
-              as={Link}
               href={`/${id}`}
               variant="light"
               aria-current={activeSection === id ? "page" : undefined}
-              className={`font-semibold font-playfair transition ${
-                activeSection === id
-                  ? "bg-black text-black"
-                  : "hover:text-black text-black"
-              }`}
+              className={`font-semibold font-playfair transition ${activeSection === id
+                ? "bg-black text-black"
+                : "hover:text-black text-black"
+                }`}
             >
               {label}
-            </Button>
+            </LinkButton>
           ))}{" "}
           <div className="hidden lg:flex items-center gap-4">
-            <Button
-              as={Link}
+            <LinkButton
               href="/liste-mariage"
               className="bg-secondary text-black font-playfair font-bold px-4 py-2 rounded-md transition"
             >
               Liste de mariage
-            </Button>
+            </LinkButton>
           </div>
         </nav>
 
@@ -91,23 +89,20 @@ const Header = () => {
 
       {/* Mobile menu drawer + overlay */}
       <div
-        className={`sm:hidden fixed inset-0 z-40 transition-all duration-300 ${
-          isOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
+        className={`sm:hidden fixed inset-0 z-40 transition-all duration-300 ${isOpen ? "pointer-events-auto" : "pointer-events-none"
+          }`}
       >
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
           onClick={() => setIsOpen(false)}
         />
 
         {/* Drawer panel aligné à gauche */}
         <div
-          className={`absolute top-0 left-0 h-full w-3/4 max-w-xs bg-primary shadow-lg p-6 flex flex-col justify-between transition-transform duration-300 ${
-            isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-          }`}
+          className={`absolute top-0 left-0 h-full w-3/4 max-w-xs bg-primary shadow-lg p-6 flex flex-col justify-between transition-transform duration-300 ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+            }`}
         >
           {/* Header mini */}
           <div>
@@ -124,7 +119,7 @@ const Header = () => {
               </button>
             </div>
 
-          <div className="w-full border-t border-black mb-3"></div>
+            <div className="w-full border-t border-black mb-3"></div>
 
             {/* Nav */}
             <nav className="flex flex-col gap-4   ">
@@ -133,11 +128,10 @@ const Header = () => {
                   key={id}
                   href={`/${id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`text-base font-semibold ${
-                    activeSection === id
-                      ? "text-black underline"
-                      : "text-gray-800"
-                  }`}
+                  className={`text-base font-semibold ${activeSection === id
+                    ? "text-black underline"
+                    : "text-gray-800"
+                    }`}
                 >
                   {label}
                 </Link>
@@ -147,15 +141,14 @@ const Header = () => {
 
 
           <div className="mt-6 flex flex-col gap-6">
-            <Button
-            
-              as={Link}
+            <LinkButton
+
               href="/liste-mariage"
               onPress={() => setIsOpen(false)}
               className="text-black bg-secondary text-center py-2 rounded-md font-semibold flex items-center"
             >
               Liste de mariage
-            </Button>
+            </LinkButton>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Button } from "@heroui/button";
+import { LinkButton } from "@/components/UI/LinkButton";
 import { Card, CardBody, CardHeader } from "@heroui/card";
-import Link from "next/link";
 import Image from "next/image";
 
 interface CardProgramProps {
@@ -31,16 +31,15 @@ const CardProgram = ({
         <h4 className="font-bold text-large font-marcellus">{title}</h4>
         <small className="text-default-500 font-marcellus">{description}</small>
         <div>
-          <Button
+          <LinkButton
             variant="light"
-            as={Link}
             href="/info-pratique"
             size="sm"
             className=" p-0 underline uppercase font-marcellus"
           >
-       
+
             Comment s'y rendre -{">"}{" "}
-          </Button>
+          </LinkButton>
         </div>
       </CardBody>
     </Card>
