@@ -42,7 +42,7 @@ export default function ProgrammePageOption3() {
   
       <ContentImgSection
         title="Programme de la journée"
-        description="Découvrez le déroulement de notre journée spéciale du 16 Juin 2026. De la cérémonie à l'église de Tizy jusqu'aux festivités au Château de Laforest, chaque moment a été pensé pour partager notre bonheur avec vous."
+        description="Découvrez le déroulement de notre journée spéciale du 16 Mai 2026. De la cérémonie à l'église de Tizy jusqu'aux festivités au Château de Laforest, chaque moment a été pensé pour partager notre bonheur avec vous."
         imageSrc="/assets/images/photo-jardin.jpeg"
         imageAlt="Programme du mariage"
         reverse={false}
@@ -52,7 +52,7 @@ export default function ProgrammePageOption3() {
       <section className="bg-white py-16">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="font-playfair text-3xl md:text-4xl mb-4">Samedi 16 Juin 2026</h2>
+            <h2 className="font-playfair text-3xl md:text-4xl mb-4">Samedi 16 Mai 2026</h2>
             <p className="font-marcellus text-gray-600">Église de Thizy les bourgs & Château de Laforest</p>
           </div>
           
@@ -111,9 +111,7 @@ export default function ProgrammePageOption3() {
               <div className="bg-primary border-1 border-black p-6 rounded-lg shadow-md">
                 <div className="text-3xl mb-3">🎵</div>
                 <h3 className="font-marcellus font-bold mb-2">Ambiance</h3>
-                <p className="font-marcellus text-sm text-gray-600">
-                  Musique live<br/>
-                  & DJ
+                <p className="font-marcellus text-sm text-gray-600"> DJ
                 </p>
               </div>
             </div>
