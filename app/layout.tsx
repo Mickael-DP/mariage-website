@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Providers } from "./providers";
 
@@ -13,7 +14,6 @@ import {
 } from "@/config/fonts";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -44,13 +44,13 @@ export default function RootLayout({
           fontSans.variable,
           fontMarcellus.variable,
           fontMarcellusSC.variable,
-          fontPlayfair.variable
+          fontPlayfair.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
             <Header />
-            <main>{children}</main> 
+            <main>{children}</main>
             <Footer />
           </div>
           <Analytics />

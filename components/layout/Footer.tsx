@@ -1,5 +1,5 @@
-import { MailIcon, PhoneCall, PhoneIcon } from "lucide-react";
-import Container from "./Container";
+import Link from "next/link";
+import { MailIcon, PhoneIcon } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:gap-2 md:text-start">
           <h2 className="font-playfair font-bold">Amaury et Angélique</h2>
           <p className="font-marcellus text-text">
-            Nous avons hâte de partager ce moment unique avec vous ! 
+            Nous avons hâte de partager ce moment unique avec vous !
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
@@ -16,30 +16,38 @@ const Footer = () => {
             <h3 className="font-playfair font-bold mb-2">Plan du site</h3>
             <ul>
               <li className="font-marcellus text-text">
-                <a href="/">Accueil</a>
+                <Link href="/">Accueil</Link>
               </li>
               <li className="font-marcellus text-text">
-                <a href="/programme">Programme</a>
+                <Link href="/programme">Programme</Link>
               </li>
               <li className="font-marcellus text-text">
-                <a href="/liste-mariage">Liste de mariage</a>
+                <Link href="/liste-mariage">Liste de mariage</Link>
               </li>
               <li className="font-marcellus text-text">
-                <a href="/info-pratique">Info Pratique</a>
+                <Link href="/info-pratique">Info Pratique</Link>
               </li>
             </ul>
           </div>
-          <div >
-            <h3 className="font-playfair text-center  font-bold mb-2">Contact</h3>
+          <div>
+            <h3 className="font-playfair text-center  font-bold mb-2">
+              Contact
+            </h3>
             <ul className="flex flex-col items-center md:items-start">
               <li className="font-marcellus flex gap-3 items-center text-text">
-                <MailIcon size={18} />sejalon.angelique@gmail.com 
-                <a href="mailto:sejalon.angelique@gmail.com 
- " className="underline" />
+                <MailIcon size={18} />
+                <a
+                  className="underline"
+                  href="mailto:sejalon.angelique@gmail.com"
+                >
+                  sejalon.angelique@gmail.com
+                </a>
               </li>
               <li className="font-marcellus flex gap-3 items-center text-text">
-                 <PhoneIcon size={18}/>+33 6 84 75 54 57
-                <a href="tel:+33684755457" className="underline" />
+                <PhoneIcon size={18} />
+                <a className="underline" href="tel:+33684755457">
+                  +33 6 84 75 54 57
+                </a>
               </li>
             </ul>
           </div>
@@ -48,8 +56,16 @@ const Footer = () => {
 
       <div className="flex flex-col items-center text-center gap-2 px-4 py-4 text-xs">
         <div className="w-full text-center py-2">
-          © {new Date().getFullYear()} <a href="https://www.mdallepasqualine.com/" target="_blank" className="underline">MDP-Développeur Freelance</a>. Tous droits
-          réservés.
+          © {new Date().getFullYear()}{" "}
+          <a
+            className="underline"
+            href="https://www.mdallepasqualine.com/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            MDP-Développeur Freelance
+          </a>
+          . Tous droits réservés.
         </div>
       </div>
     </footer>

@@ -12,17 +12,17 @@ export default function HomePage() {
     <div className="flex flex-col ">
       <Hero />
       <ContentImgSection
-        title="Bienvenue sur notre site de mariage"
-        description="Nous sommes ravis de partager avec vous les détails de notre journée spéciale. Explorez le site pour en savoir plus sur notre histoire, le programme de la journée, et bien plus encore."
-        imageSrc="/assets/images/amau&angelique2.JPG"
-        subtitle=""
-        imageAlt="Jour de notre rencontre"
-        reverse={true}
-        ctaText="Liste de mariage"
-        ctaHref="/liste-mariage"
-        ctaColor="primary"
         ctaClassName="text-black"
+        ctaColor="primary"
+        ctaHref="/liste-mariage"
         ctaSize="lg"
+        ctaText="Liste de mariage"
+        description="Nous sommes ravis de partager avec vous les détails de notre journée spéciale. Explorez le site pour en savoir plus sur notre histoire, le programme de la journée, et bien plus encore."
+        imageAlt="Jour de notre rencontre"
+        imageSrc="/assets/images/amau&angelique2.JPG"
+        reverse={true}
+        subtitle=""
+        title="Bienvenue sur notre site de mariage"
       />
       <section className="bg-primary">
         <Container>
@@ -32,82 +32,80 @@ export default function HomePage() {
 
           <div className="md:hidden flex flex-col gap-6 mb-12">
             <CardMobile
+              className="bg-white"
+              description="On s’est trouvés en plein Covid, un match improbable devenu une belle évidence, entre couvre-feu et stratagèmes amoureux"
+              imageAlt="photo-rencontre"
+              imageSrc="/assets/images/photo-rencontre.jpg"
               subtitle="1 Février 2021"
               title="Jour de notre rencontre"
-              description="On s’est trouvés en plein Covid, un match improbable devenu une belle évidence, entre couvre-feu et stratagèmes amoureux"
-              imageSrc="/assets/images/photo-rencontre.jpg"
-              imageAlt="photo-rencontre"
-              className="bg-white"
             />
             <CardMobile
+              className="bg-white"
+              description='Un bateau, un faux prétexte de pêche, un vrai genou à terre… et moi, paniquée : "T’es vraiment sûr ?" — avant de dire oui, évidemment !'
+              imageAlt="photo-demande"
+              imageSrc="/assets/images/photo-demande.jpg"
               subtitle="26 Juin 2024"
               title="Jour de nos fiançailles"
-              description='Un bateau, un faux prétexte de pêche, un vrai genou à terre… et moi, paniquée : "T’es vraiment sûr ?" — avant de dire oui, évidemment !'
-              imageSrc="/assets/images/photo-demande.jpg"
-              imageAlt="photo-demande"
-              className="bg-white"
             />
           </div>
 
           <div className="hidden md:block">
             <ContentBlocImgTxt
+              description="On s’est trouvés en plein Covid, un match improbable devenu une belle évidence, entre couvre-feu et stratagèmes amoureux"
+              imageAlt="photo-rencontre"
+              imageSrc="/assets/images/photo-rencontre.jpg"
+              reverse={false}
               subtitle="1 Février 2021"
               title="Jour de notre rencontre"
-              description="On s’est trouvés en plein Covid, un match improbable devenu une belle évidence, entre couvre-feu et stratagèmes amoureux"
-              imageSrc="/assets/images/photo-rencontre.jpg"
-              imageAlt="photo-rencontre"
-              reverse={false}
             />
             <ContentBlocImgTxt
+              description='Un bateau, un faux prétexte de pêche, un vrai genou à terre… et moi, paniquée : "T’es vraiment sûr ?" — avant de dire oui, évidemment !'
+              imageAlt="photo-demande"
+              imageSrc="/assets/images/photo-demande.jpg"
+              reverse={true}
               subtitle="26 Juin 2024"
               title="Jour de nos fiançailles"
-              description='Un bateau, un faux prétexte de pêche, un vrai genou à terre… et moi, paniquée : "T’es vraiment sûr ?" — avant de dire oui, évidemment !'
-              imageSrc="/assets/images/photo-demande.jpg"
-              imageAlt="photo-demande"
-              reverse={true}
             />
           </div>
         </Container>
       </section>
-      <section id="programme" className="bg-white ">
+      <section className="bg-white " id="programme">
         <h2 className="text-center text-4xl md:text-5xl font-playfair pt-12">
           Le Programme
         </h2>
         <Container className="flex gap-4 md:gap-6 md:flex-row justify-between flex-wrap">
           <CardProgram
-            title="Cérémonie à l'église"
+            className="shadow-none border-1 border-text"
             description="Église de Thizy les Bourgs"
-            imageSrc="/assets/images/photo-eglise.jpg"
             imageAlt="Cérémonie civile"
-            className="shadow-none border-1 border-text"
+            imageSrc="/assets/images/photo-eglise.jpg"
+            title="Cérémonie à l'église"
           />
           <CardProgram
-            title="Vin d'honneur"
+            className="shadow-none border-1 border-text"
             description="Jardin du Domaine de Laforest"
-            imageSrc="/assets/images/photo-domaine.jpg"
             imageAlt="Vin d'honneur"
-            className="shadow-none border-1 border-text"
+            imageSrc="/assets/images/photo-domaine.jpg"
+            title="Vin d'honneur"
           />
           <CardProgram
-            title="Dîner & Soirée"
-            description="Salle de réception du Château de Laforest"
-            imageSrc="/assets/images/photo-fete.jpeg"
-            imageAlt="Dîner et soirée"
             className="shadow-none border-1 border-text"
-
+            description="Salle de réception du Château de Laforest"
+            imageAlt="Dîner et soirée"
+            imageSrc="/assets/images/photo-fete.jpeg"
+            title="Dîner & Soirée"
           />
         </Container>
         <div className="text-center ">
           <LinkButton
-            href="/programme"
+            className="font-marcellus-sc text-black "
             color="primary"
+            href="/programme"
             variant="solid"
-            className='font-marcellus-sc text-black '
           >
             Voir le programme complet
           </LinkButton>
         </div>
-
       </section>
       <QRcodeSection />
     </div>

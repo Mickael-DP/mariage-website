@@ -1,9 +1,9 @@
-import { 
-  Fira_Code as FontMono, 
+import {
+  Fira_Code as FontMono,
   Inter as FontSans,
   Marcellus,
   Marcellus_SC,
-  Playfair_Display
+  Playfair_Display,
 } from "next/font/google";
 
 export const fontSans = FontSans({

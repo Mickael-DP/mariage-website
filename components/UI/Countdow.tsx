@@ -32,10 +32,10 @@ const Countdown = ({ targetDate, className = "" }: CountdownProps) => {
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
         const minutes = Math.floor(
-          (difference % (1000 * 60 * 60)) / (1000 * 60)
+          (difference % (1000 * 60 * 60)) / (1000 * 60),
         );
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
@@ -62,7 +62,7 @@ const Countdown = ({ targetDate, className = "" }: CountdownProps) => {
       <div className={`countdown ${className}`}>
         <div className="countdown-item completed">
           <span className="countdown-number">🎉</span>
-          <span className="countdown-label">C'est le grand jour !</span>
+          <span className="countdown-label">C&apos;est le grand jour !</span>
         </div>
       </div>
     );
@@ -77,7 +77,7 @@ const Countdown = ({ targetDate, className = "" }: CountdownProps) => {
         <span className="font-marcellus uppercase">Jours</span>
       </div>
       <div className="flex flex-col items-center gap-1 ">
-      <span className="font-marcellus text-4xl ">
+        <span className="font-marcellus text-4xl ">
           {timeLeft.hours.toString().padStart(2, "0")}
         </span>
         <span className="font-marcellus uppercase">Heures</span>
@@ -89,7 +89,7 @@ const Countdown = ({ targetDate, className = "" }: CountdownProps) => {
         <span className="font-marcellus  uppercase">Minutes</span>
       </div>
       <div className="flex flex-col items-center gap-1 ">
-      <span className="font-marcellus text-4xl ">
+        <span className="font-marcellus text-4xl ">
           {timeLeft.seconds.toString().padStart(2, "0")}
         </span>
         <span className="font-marcellus uppercase">Secondes</span>

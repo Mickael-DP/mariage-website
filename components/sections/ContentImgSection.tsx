@@ -1,9 +1,10 @@
 import { Button } from "@heroui/button";
-import { LinkButton } from "@/components/UI/LinkButton";
-import Container from "../layout/Container";
 import Image from "next/image";
-import Link from "next/link";
+
+import Container from "../layout/Container";
 import MotionWrapper from "../UI/MotionWrapper";
+
+import { LinkButton } from "@/components/UI/LinkButton";
 
 interface ContentImgSectionProps {
   title: string;
@@ -22,13 +23,13 @@ interface ContentImgSectionProps {
   ctaClassName?: string;
   ctaColor?: "primary" | "secondary" | "success" | "warning" | "danger";
   ctaVariant?:
-  | "solid"
-  | "bordered"
-  | "light"
-  | "flat"
-  | "faded"
-  | "shadow"
-  | "ghost";
+    | "solid"
+    | "bordered"
+    | "light"
+    | "flat"
+    | "faded"
+    | "shadow"
+    | "ghost";
   ctaSize?: "sm" | "md" | "lg";
   mapSrc?: string;
   showMap?: boolean;
@@ -57,15 +58,15 @@ const ContentImgSection = ({
 }: ContentImgSectionProps) => {
   const textContentDesktop = (
     <div className={`flex-1 flex flex-col justify-center text-${textAlign}`}>
-      <MotionWrapper direction="up" delay={0.1}>
+      <MotionWrapper delay={0.1} direction="up">
         {subtitle && (
           <p className="font-marcellus text-2xl md:text-3xl mb-6">{subtitle}</p>
         )}
         <h2 className="font-marcellus-sc text-4xl md:text-5xl mb-4">{title}</h2>
         {descriptionHtml ? (
           <div
-            className="font-marcellus text-sm text-text md:text-xl mb-4"
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+            className="font-marcellus text-sm text-text md:text-xl mb-4"
           />
         ) : description ? (
           <p className="font-marcellus text-sm text-text md:text-xl mb-4">
@@ -79,23 +80,23 @@ const ContentImgSection = ({
           <div className="md:mt-6">
             {ctaHref ? (
               <LinkButton
-                href={ctaHref}
-                color={ctaColor}
-                variant={ctaVariant}
-                size={ctaSize}
                 className={`font-marcellus-sc ${ctaClassName}`}
-                target="_blank"
+                color={ctaColor}
+                href={ctaHref}
                 rel="noopener noreferrer"
+                size={ctaSize}
+                target="_blank"
+                variant={ctaVariant}
               >
                 {ctaText}
               </LinkButton>
             ) : (
               <Button
-                onPress={ctaOnClick}
-                color={ctaColor}
-                variant={ctaVariant}
-                size={ctaSize}
                 className={`font-marcellus-sc ${ctaClassName}`}
+                color={ctaColor}
+                size={ctaSize}
+                variant={ctaVariant}
+                onPress={ctaOnClick}
               >
                 {ctaText}
               </Button>
@@ -112,8 +113,8 @@ const ContentImgSection = ({
       <h2 className="font-marcellus text-3xl mb-4">{title}</h2>
       {descriptionHtml ? (
         <div
-          className="font-marcellus  text-text mb-4"
           dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          className="font-marcellus  text-text mb-4"
         />
       ) : description ? (
         <p className="font-marcellus text-sm text-text md:text-xl mb-4">
@@ -127,26 +128,30 @@ const ContentImgSection = ({
 
   const imageColumnDesktop = (
     <div className="hidden md:flex flex-1 items-center justify-center">
-      <MotionWrapper direction="up" delay={0.3} className="w-full h-full flex items-center justify-center">
+      <MotionWrapper
+        className="w-full h-full flex items-center justify-center"
+        delay={0.3}
+        direction="up"
+      >
         <div className="relative w-full h-[400px] md:h-[500px]">
           {showMap && mapSrc ? (
             <iframe
-              src={mapSrc}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
               allowFullScreen={true}
+              className="rounded-lg"
+              height="100%"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg"
+              src={mapSrc}
+              style={{ border: 0 }}
               title="Google Maps"
+              width="100%"
             />
           ) : (
             <Image
-              src={imageSrc || ""}
-              alt={imageAlt || ""}
               fill
+              alt={imageAlt || ""}
               className="rounded-lg object-cover object-center"
+              src={imageSrc || ""}
             />
           )}
         </div>
@@ -158,10 +163,10 @@ const ContentImgSection = ({
     <div className="md:hidden flex items-center justify-center ">
       <div className="relative w-full h-[300px]">
         <Image
-          src={imageSrc || ""}
-          alt={imageAlt || ""}
           fill
+          alt={imageAlt || ""}
           className="rounded-lg object-cover object-center"
+          src={imageSrc || ""}
         />
       </div>
     </div>
@@ -171,19 +176,19 @@ const ContentImgSection = ({
     <div className="md:hidden flex justify-center ">
       {ctaHref ? (
         <LinkButton
-          href={ctaHref}
-          color={ctaColor}
-          variant={ctaVariant}
           className={`font-marcellus-sc ${ctaClassName}`}
+          color={ctaColor}
+          href={ctaHref}
+          variant={ctaVariant}
         >
           {ctaText}
         </LinkButton>
       ) : (
         <Button
-          onPress={ctaOnClick}
+          className={`font-marcellus-sc ${ctaClassName}`}
           color={ctaColor}
           variant={ctaVariant}
-          className={`font-marcellus-sc ${ctaClassName}`}
+          onPress={ctaOnClick}
         >
           {ctaText}
         </Button>

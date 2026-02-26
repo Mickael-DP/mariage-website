@@ -1,7 +1,7 @@
-import { Button } from "@heroui/button";
-import { LinkButton } from "@/components/UI/LinkButton";
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import Image from "next/image";
+
+import { LinkButton } from "@/components/UI/LinkButton";
 
 interface CardProgramProps {
   title: string;
@@ -21,10 +21,12 @@ const CardProgram = ({
   className = "",
 }: CardProgramProps) => {
   return (
-    <Card className={`w-[362px] h-[440px] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${className}`}>
+    <Card
+      className={`w-[362px] h-[440px] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ${className}`}
+    >
       <CardHeader className="p-0  h-[264px] flex-col items-start">
         <div className="relative w-full h-full">
-          <Image alt={imageAlt} className="object-cover" src={imageSrc} fill />
+          <Image fill alt={imageAlt} className="object-cover" src={imageSrc} />
         </div>
       </CardHeader>
       <CardBody className="overflow-hidden p-6 flex flex-col gap-3">
@@ -32,13 +34,12 @@ const CardProgram = ({
         <small className="text-default-500 font-marcellus">{description}</small>
         <div>
           <LinkButton
-            variant="light"
+            className=" p-0 underline uppercase font-marcellus"
             href="/info-pratique"
             size="sm"
-            className=" p-0 underline uppercase font-marcellus"
+            variant="light"
           >
-
-            Comment s'y rendre -{">"}{" "}
+            Comment s&apos;y rendre -&gt;{" "}
           </LinkButton>
         </div>
       </CardBody>

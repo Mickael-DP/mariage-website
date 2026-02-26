@@ -55,6 +55,7 @@ export default function ListeMariagePage() {
     
     `,
   };
+
   return (
     <div className="flex flex-col ">
       <section className="bg-primary">
@@ -68,16 +69,16 @@ export default function ListeMariagePage() {
         </Container>
       </section>
       <ContentImgSection
-        title="Notre voyage de noces"
-        descriptionHtml={description.__html}
-        imageSrc="/assets/gallery/tahiti.jpeg"
-        imageAlt="Notre Histoire"
-        reverse={false}
-        ctaText=" Notre cagnotte"
-        ctaHref="https://www.my-liste.fr/client/liste/show/49/nouvelle-liste-de-voyage-pour-angelique-sejalon"
-        ctaColor="primary"
         ctaClassName="text-black"
+        ctaColor="primary"
+        ctaHref="https://www.my-liste.fr/client/liste/show/49/nouvelle-liste-de-voyage-pour-angelique-sejalon"
         ctaSize="lg"
+        ctaText=" Notre cagnotte"
+        descriptionHtml={description.__html}
+        imageAlt="Notre Histoire"
+        imageSrc="/assets/gallery/tahiti.jpeg"
+        reverse={false}
+        title="Notre voyage de noces"
       />
       <QRcodeSection />
     </div>
